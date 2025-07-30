@@ -4,10 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Kaimier Studio - 炫酷科技风</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
+        // 强制 HTTPS 重定向
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+        
         tailwind.config = {
             theme: {
                 extend: {
@@ -129,7 +135,7 @@
                 kaimier@qq.com
             </p>
             <p class="text-xs md:text-sm text-gray-400 font-inter font-light tracking-wide">
-                不务正业中，回信随缘
+                不务正业中，回信随缘，单体最香
             </p>
         </div>
 
